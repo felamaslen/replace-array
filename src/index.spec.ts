@@ -19,3 +19,15 @@ test("replaceAtIndex doesn't do anything if the index is -1", () => {
 
   expect(result).toBe(array);
 });
+
+test('replaceAtIndex allows passing in a function of the previous value', () => {
+  const array: number[] = [5, 7, 4, 1, 9];
+
+  expect(replaceAtIndex<number>(array, 1, value => value * 10)).toEqual([5, 70, 4, 1, 9]);
+
+  expect(
+    replaceAtIndex<number>(array, 3, value => Math.log(value)),
+  ).toEqual([5, 7, 4, 0, 9]);
+
+  expect(replaceAtIndex<number>(array, -1, value => value / 3)).toEqual([5, 7, 4, 1, 9]);
+});
