@@ -5,7 +5,7 @@ function isFunction<T>(replacer: Replacer<T>): replacer is (value: T) => T {
 }
 
 export function replaceAtIndex<T>(array: T[], index: number, replacer: Replacer<T>): T[] {
-  if (index === -1) {
+  if (index < 0 || index > array.length - 1) {
     return array;
   }
 

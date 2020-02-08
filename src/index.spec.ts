@@ -31,3 +31,13 @@ test('replaceAtIndex allows passing in a function of the previous value', () => 
 
   expect(replaceAtIndex<number>(array, -1, value => value / 3)).toEqual([5, 7, 4, 1, 9]);
 });
+
+test("replaceAtIndex shouldn't throw an error if the index is out of range", () => {
+  const array: number[] = [1, 2, 3];
+
+  expect(replaceAtIndex(array, -2, 0)).toBe(array);
+  expect(replaceAtIndex(array, 3, 0)).toBe(array);
+  expect(replaceAtIndex(array, 4, 0)).toBe(array);
+  expect(replaceAtIndex(array, 56312, 0)).toBe(array);
+  expect(replaceAtIndex(array, Infinity, 0)).toBe(array);
+});
