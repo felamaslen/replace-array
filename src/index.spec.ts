@@ -1,4 +1,4 @@
-import { replaceAtIndex } from '.';
+import { replaceAtIndex, removeAtIndex } from '.';
 
 test('replaceAtIndex replaces an array item at a specified index', () => {
   const array: (number | string)[] = [1, 2, 3, 4, 5];
@@ -40,4 +40,22 @@ test("replaceAtIndex shouldn't throw an error if the index is out of range", () 
   expect(replaceAtIndex(array, 4, 0)).toBe(array);
   expect(replaceAtIndex(array, 56312, 0)).toBe(array);
   expect(replaceAtIndex(array, Infinity, 0)).toBe(array);
+});
+
+test('removeAtIndex removes an item at a specified index', () => {
+  const array: number[] = [1, 2, 3];
+
+  expect(removeAtIndex(array, 1)).toEqual([1, 3]);
+  expect(removeAtIndex(array, 0)).toEqual([2, 3]);
+  expect(removeAtIndex(array, 2)).toEqual([1, 2]);
+});
+
+test("removeAtIndex doesnt't alter the array if the index is out of bounds", () => {
+  const array: number[] = [1, 2, 3];
+
+  expect(removeAtIndex(array, -1)).toBe(array);
+  expect(removeAtIndex(array, -103)).toBe(array);
+  expect(removeAtIndex(array, 3)).toBe(array);
+  expect(removeAtIndex(array, 1023)).toBe(array);
+  expect(removeAtIndex(array, Infinity)).toBe(array);
 });
