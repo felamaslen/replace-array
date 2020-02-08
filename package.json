@@ -1,10 +1,10 @@
 {
-  "name": "replace-at-index",
+  "name": "replace-array",
   "version": "0.0.1",
   "description": "Replace or remove items in JavaScript arrays",
   "repository": {
     "type": "git",
-    "url": "https://github.com/felamaslen/replace-at-index.git"
+    "url": "https://github.com/felamaslen/replace-array.git"
   },
   "author": "Fela Maslen",
   "license": "MIT",
