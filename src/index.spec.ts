@@ -42,6 +42,13 @@ test("replaceAtIndex shouldn't throw an error if the index is out of range", () 
   expect(replaceAtIndex(array, Infinity, 0)).toBe(array);
 });
 
+test('replaceAtIndex allows padding the array if necessary', () => {
+  const array: number[] = [1, 2, 3];
+
+  expect(replaceAtIndex(array, 5, 1, 0)).toEqual([1, 2, 3, 0, 0, 1]);
+  expect(replaceAtIndex(array, 5, value => value ** 3, 10)).toEqual([1, 2, 3, 10, 10, 1000]);
+});
+
 test('removeAtIndex removes an item at a specified index', () => {
   const array: number[] = [1, 2, 3];
 

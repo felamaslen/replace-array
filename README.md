@@ -20,6 +20,8 @@ import { replaceAtIndex } from 'replace-array';
 const replaced = replaceAtIndex([1, 2, 3], 1, 5); // -> [1, 5, 3]
 
 const replacedFn = replaceAtIndex([1, 2, 3], 1, value => value * 3); // -> [1, 6, 3]
+
+const replacedPadded = replaceAtIndex([1, 2], 3, 10, 0); // -> [1, 2, 0, 10]
 ```
 
 ### removeAtIndex
