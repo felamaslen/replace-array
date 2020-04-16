@@ -1,6 +1,6 @@
 {
   "name": "replace-array",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Replace or remove items in JavaScript arrays",
   "repository": {
     "type": "git",
