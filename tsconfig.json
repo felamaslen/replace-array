@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "module": "commonjs",
+    "module": "es2015",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "allowJs": false,
@@ -13,7 +13,9 @@
     "noImplicitAny": true,
     "skipLibCheck": true,
     "lib": ["es2015"],
-    "baseUrl": "."
+    "baseUrl": ".",
+    "declaration": true,
+    "outDir": "dist"
   },
   "include": ["src"],
   "exclude": ["node_modules"]
